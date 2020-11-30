@@ -1,0 +1,153 @@
+p {
+    font-family: "Secular One", Arial; 
+}
+
+header {
+    background-color: crimson; 
+}
+
+header .container {
+    padding: 2em 1em; 
+    color: white;
+    font-family: "Secular One", Arial; 
+}
+
+main {
+    
+}
+
+main .container {
+   
+}
+
+
+main .main-column {
+    padding: 1em 0em; 
+}
+
+.column-title {
+    color: crimson; 
+    padding: 1em 1em; 
+    font-family: "Secular One", Arial; 
+}
+
+.column-title h1 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid crimson;
+}
+.column-title h1 small {
+    color: crimson; 
+}
+
+.column-title hr {
+    color: crimson !important;
+}
+
+.column-content {
+    padding: 1em 1em; 
+}
+
+.column-content input, .column-content select{
+    font-family: "Secular One", Arial !important;
+}
+
+.input-group-text {
+    font-family: "Secular One", Arial; 
+    font-size: 1.5em;
+}
+
+.column-separatedcode .separatedcode-addon {
+    color: white; 
+}
+
+.separatedcode-addon-red {
+    background-color: red;
+}
+
+.separatedcode-addon-green {
+    background-color: green;
+}
+
+.separatedcode-addon-blue {
+    background-color: blue; 
+} 
+
+
+main .color-shown {
+    margin: 2em 0em; 
+}
+
+main .color-shown h1 {
+    font-family: "Secular One", Arial; 
+}
+
+.color-visual {
+    width: 100%;
+    height: 100px;
+    background-color: black; 
+    border-radius: 10px;
+    border: 5px solid black !important; 
+}
+
+#red {
+    color: red;
+}
+
+#green {
+    color: green;
+}
+
+#blue {
+    color: blue; 
+}
+
+footer {
+    font-family: "Secular One", Arial; 
+}
+
+footer .container {
+    padding: 2em 1em;  
+}
+
+.fa .fa-circle {
+    color: white !important;
+}
+
+.fa .fa-envelope {
+    color: crimson; 
+}
+
+.fa .fa-envelope:hover {
+    color: black;
+}
+
+footer {
+    background-color: crimson; 
+    font-size: 1em; 
+    color: white;
+}
+
+footer a:hover {
+    
+}
+
+footer .tooltip-inner {
+    font-family: "Secular One", Arial; 
+}
+
+.upicon {
+    position: fixed;
+    text-align: center; 
+    background-color: black;
+    color: white;
+    width: 2em;
+    height: 2em;
+    border: 2px solid black;
+    font-size:1em;
+    bottom: 2em;
+    right: 2em; 
+    opacity: 0.5; 
+    z-index:9999;
+    display: none;
+    transition: opacity 0.5s linear 0s; 
+} 

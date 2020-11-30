@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <title>Selecciona un color</title>
+		<meta charset="UTF-8"/>
+        
+		<meta name="author" content="CrisMVP3200"/>
+        
+		<meta name="description" content="Selecciona un color"/>
+        
+		<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>  
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black|Secular+One" />
+        
+        <link rel="stylesheet" href="css/main.css"/>
+	</head>
+
+	<body ng-app="webApp">
+		<header>
+			<div class="web-header container text-center text-uppercase">
+				<h1>Selecciona un color</h1>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="row text-center">
+                    <div class="col-sm-4 main-column column-hexcode">
+                        <div class="column-title text-uppercase">
+                            <h1><small>Por</small><br/>valor HEX</h1>  
+                        </div>          
+                        <div class="column-content">
+                            <p>Ingrese el valor hexadecimal:</p>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                           <div class="input-group-text">#</div>
+                                    </div>
+                                    <input type="text" class="form-control text-uppercase input-lg" id="hexInput" placeholder="rrggbb" maxlength="6"/>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-sm-4 main-column column-separatedcode">
+                        <div class="column-title text-uppercase">
+                            <h1><small>Por</small><br/>colores</h1>
+                        </div>    
+                        
+                        <div class="column-content">
+                            <p>Ingrese los valores (0-255) para cada color:</p>
+                            
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text separatedcode-addon separatedcode-addon-red">R</div>
+                                    </div>
+                                    <input type="number" class="form-control input-lg" id="redInput" min="0" max="255" placeholder="Valor entre 0 y 255" value="0"/>
+                                </div>
+                            </div>
+                            
+                            <input id="redRange" class="form-control" type="range" min="0" max="255" step="1" value="0"/>
+                            
+                            <hr/>
+                        
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text separatedcode-addon separatedcode-addon-green">G</div>
+                                    </div>
+                                    <input type="number" class="form-control input-lg" id="greenInput" min="0" max="255" placeholder="Valor entre 0 y 255" value="0"/>
+                                 </div>
+                            </div>
+                                               
+                            <input id="greenRange" class="form-control" type="range" min="0" max="255" step="1" value="0"/>
+
+                            <br/>
+                           
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text separatedcode-addon separatedcode-addon-blue">B</div>
+                                    </div>
+                                    <input type="number" class="form-control input-lg" id="blueInput" min="0" max="255" placeholder="Valor entre 0 y 255" value="0"/>
+                                </div>
+                            </div>
+                            
+                            <input id="blueRange" class="form-control" type="range" min="0" max="255" step="1" value="0"/>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-4 main-column column-name" ng-controller="selectCtrl">
+                        <div class="column-title text-uppercase">
+                            <h1><small>Por</small><br/>nombre</h1>
+                        </div>
+                        
+                        <div class="column-content">
+                            <p>Ingrese un nombre de color:</p>
+                            <input id="colorNameInput" class="form-control form-control-lg"/>
+                            <br/>
+                            
+                            <p>O escoja uno:</p>
+                            
+                            <select id="colorNameSelect" class="form-control form-control-lg">
+                                <option value="" selected></option>
+                                <option value="aliceblue">AliceBlue</option>
+                                <option value="antiquewhite">AntiqueWhite</option>
+                                <option value="aqua">Aqua</option>
+                                <option value="aquamarine">Aquamarine</option>
+                                <option value="azure">Azure</option>
+                                <option value="beige">Beige</option>
+                                <option value="bisque">Bisque</option>
+                                <option value="black">Black</option>
+                                <option value="blanchedalmond">BlanchedAlmond</option>
+                                <option value="blue">Blue</option>
+                                <option value="blueviolet">BlueViolet</option>
+                                <option value="brown">Brown</option>
+                                <option value="burlywood">BurlyWood</option>
+                                <option value="cadetblue">CadetBlue</option>
+                                <option value="chartreuse">Chartreuse</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="coral">Coral</option>
+                                <option value="cornflowerblue">CornflowerBlue</option>
+                                <option value="cornsilk">Cornsilk</option>
+                                <option value="crimson">Crimson</option>
+                                <option value="cyan">Cyan</option>
+                                <option value="darkblue">DarkBlue</option>
+                                <option value="darkcyan">DarkCyan</option>
+                                <option value="darkgoldenrod">DarkGoldenRod</option>
+                                <option value="darkgray">DarkGray</option>
+                                <option value="darkgrey">DarkGrey</option>
+                                <option value="darkgreen">DarkGreen</option>
+                                <option value="darkkhaki">DarkKhaki</option>
+                                <option value="darkmagenta">DarkMagenta</option>
+                                <option value="darkolivegreen">DarkOliveGreen</option>
+                                <option value="darkorange">DarkOrange</option>
+                                <option value="darkorchid">DarkOrchid</option>
+                                <option value="darkred">DarkRed</option>
+                                <option value="darksalmon">DarkSalmon</option>
+                                <option value="darkseagreen">DarkSeaGreen</option>
+                                <option value="darkslateblue">DarkSlateBlue</option>
+                                <option value="darkslategray">DarkSlateGray</option>
+                                <option value="darkslategrey">DarkSlateGrey</option>
+                                <option value="darkturquoise">DarkTurquoise</option>
+                                <option value="darkviolet">DarkViolet</option>
+                                <option value="deeppink">DeepPink</option>
+                                <option value="deepskyblue">DeepSkyBlue</option>
+                                <option value="dimgray">DimGray</option>
+                                <option value="dimgrey">DimGrey</option>
+                                <option value="dodgerblue">DodgerBlue</option>
+                                <option value="firebrick">FireBrick</option>
+                                <option value="floralwhite">FloralWhite</option>
+                                <option value="forestgreen">ForestGreen</option>
+                                <option value="fuchsia">Fuchsia</option>
+                                <option value="gainsboro">Gainsboro</option>
+                                <option value="ghostwhite">GhostWhite</option>
+                                <option value="gold">Gold</option>
+                                <option value="goldenrod">GoldenRod</option>
+                                <option value="gray">Gray</option>
+                                <option value="grey">Grey</option>
+                                <option value="green">Green</option>
+                                <option value="greenyellow">GreenYellow</option>
+                                <option value="honeydew">HoneyDew</option>
+                                <option value="hotpink">HotPink</option>
+                                <option value="indianred">IndianRed</option>
+                                <option value="indigo">Indigo</option>
+                                <option value="ivory">Ivory</option>
+                                <option value="khaki">Khaki</option>
+                                <option value="lavender">Lavender</option>
+                                <option value="lavenderblush">Lavenderblush</option>
+                                <option value="lawngreen">LawnGreen</option>
+                                <option value="lemonchiffon">LemonChiffon</option>
+                                <option value="lightblue">LightBlue</option>
+                                <option value="lightcoral">LightCoral</option>
+                                <option value="lightcyan">LightCyan</option>
+                                <option value="lightgoldenrodyellow">LightGoldenRodYellow</option>
+                                <option value="lightgray">LightGray</option>
+                                <option value="lightgrey">LightGrey</option>
+                                <option value="lightgreen">LightGreen</option>
+                                <option value="lightpink">LightPink</option>
+                                <option value="lightsalmon">LightSalmon</option>
+                                <option value="lightseagreen">LightSeaGreen</option>
+                                <option value="lightskyblue">LightSkyBlue</option>
+                                <option value="lightslategray">LightSlateGray</option>
+                                <option value="lightslategrey">LightSlateGrey</option>
+                                <option value="lightsteelblue">LightSteelBlue</option>
+                                <option value="lightyellow">LightYellow</option>
+                                <option value="lime">Lime</option>
+                                <option value="limegreen">LimeGreen</option>
+                                <option value="linen">Linen</option>
+                                <option value="magenta">Magenta</option>
+                                <option value="maroon">Maroon</option>
+                                <option value="mediumaquamarine">MediumAquaMarine</option>
+                                <option value="mediumblue">MediumBlue</option>
+                                <option value="mediumorchid">MediumOrchid</option>
+                                <option value="mediumpurple">MediumPurple</option>
+                                <option value="mediumseagreen">MediumSeaGreen</option>
+                                <option value="mediumslateblue">MediumSlateBlue</option>
+                                <option value="mediumspringgreen">MediumSpringGreen</option>
+                                <option value="mediumturquoise">MediumTurquoise</option>
+                                <option value="mediumvioletred">MediumVioletRed</option>
+                                <option value="midnightblue">MidnightBlue</option>
+                                <option value="mintcream">MintCream</option>
+                                <option value="mistyrose">MistyRose</option>
+                                <option value="moccasin">Moccasin</option>
+                                <option value="navajowhite">NavajoWhite</option>
+                                <option value="navy">Navy</option>
+                                <option value="oldlace">OldLace</option>
+                                <option value="olive">Olive</option>
+                                <option value="olivedrab">OliveDrab</option>
+                                <option value="orange">Orange</option>
+                                <option value="orangered">OrangeRed</option>
+                                <option value="orchid">Orchid</option>
+                                <option value="palegoldenrod">PaleGoldenRod</option>
+                                <option value="palegreen">PaleGreen</option>
+                                <option value="paleturquoise">PaleTurquoise</option>
+                                <option value="palevioletred">PaleVioletRed</option>
+                                <option value="papayawhip">PapayaWhip</option>
+                                <option value="peachpuff">PeachPuff</option>
+                                <option value="peru">Peru</option>
+                                <option value="pink">Pink</option>
+                                <option value="plum">Plum</option>
+                                <option value="powderblue">PowderBlue</option>
+                                <option value="purple">Purple</option>
+                                <option value="rebeccapurple">RebeccaPurple</option>
+                                <option value="red">Red</option>
+                                <option value="rosybrown">RosyBrown</option>
+                                <option value="royalblue">RoyalBlue</option>
+                                <option value="saddlebrown">SaddleBrown</option>
+                                <option value="salmon">Salmon</option>
+                                <option value="sandybrown">SandyBrown</option>
+                                <option value="seagreen">SeaGreen</option>
+                                <option value="seashell">SeaShell</option>
+                                <option value="sienna">Sienna</option>
+                                <option value="silver">Silver</option>
+                                <option value="skyblue">SkyBlue</option>
+                                <option value="slateblue">SlateBlue</option>
+                                <option value="slategray">SlateGray</option>
+                                <option value="slategrey">SlateGrey</option>
+                                <option value="snow">Snow</option>
+                                <option value="springgreen">SpringGreen</option>
+                                <option value="steelblue">Steelblue</option>
+                                <option value="tan">Tan</option>
+                                <option value="teal">Teal</option>
+                                <option value="thistle">Thistle</option>
+                                <option value="tomato">Tomato</option>
+                                <option value="turquoise">Turquoise</option>
+                                <option value="violet">Violet</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="white">White</option>
+                                <option value="whitesmoke">WhiteSmoke</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="yellowgreen">YellowGreen</option>
+                            </select>                         
+                        </div>
+                    </div>
+                </div>
+                <div class="color-shown text-uppercase">
+                    <div class="color-visual">
+                    </div>
+                    <h1 class="text-center">
+                        #<span id="hexCode">000000</span> 
+                        <br/>
+                        <span id="red">R: <span id="redRGB">0</span></span> | <span id="green">G: <span id="greenRGB">0</span></span> | <span id="blue">B: <span id="blueRGB">0</span></span>
+                    </h1>
+                </div>
+			</div>
+		</main>
+		<footer>
+			<div class="container text-uppercase text-center">
+                <p>Cristian Cajiao Skarnic, &#169; 2016, 2018</p>
+                <p><i class="fa fa-envelope fa-fw"></i> / <i class="fa fa-skype fa-fw"></i> cristiancajiaos@gmail.com</p>
+		    </div>
+		</footer>
+        
+        <a href="#" class="link-upicon">
+            <div class="upicon">
+                <i class="fa fa-chevron-up"></i>
+            </div>
+        </a>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script src="scripts/tooltip.js"></script>
+        <script src="scripts/convertByHEX.js"></script>
+        <script src="scripts/convertByRGB.js"></script>
+        <script src="scripts/selectAndConvertByName.js"></script>
+        <script src="scripts/navigation.js"></script>
+	</body>
+</html>
